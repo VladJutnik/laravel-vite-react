@@ -3,6 +3,7 @@ import Dashboard from "./views/Dashboard";
 import Signup from "./views/Signup";
 import Login from "./views/Login";
 import Surveys from "./views/Surveys";
+import GuestLayout from "./components/GuestLayout";
 
 const router = createBrowserRouter ([
   {
@@ -14,13 +15,20 @@ const router = createBrowserRouter ([
     element: <Surveys />
   },
   {
-    path: '/login',
-    element: <Login />
+    path: '/', //url будет /login
+    //path: '/guest', //url будет /guest/login
+    element: <GuestLayout />,
+    children: [
+      {
+        path: 'signup',
+        element: <Signup />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+    ]
   },
-  {
-    path: '/signup',
-    element: <Signup />
-  }
 ])
 
 export default router;

@@ -12,6 +12,7 @@ const user = {
 const navigation = [
   { name: 'Главная', to: '/',},
   { name: 'Опросы', to: '/surveys'},
+  { name: 'Опросы', to: '/surveys'},
 ]
 const userNavigation = [
   { name: 'Sign out', href: '#' },
